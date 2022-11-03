@@ -1,0 +1,18 @@
+{
+  "name": "guestbook",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ seeinplays/guestbook",
+    "create-local": "graph create --node http://localhost:8020/ seeinplays/guestbook",
+    "remove-local": "graph remove --node http://localhost:8020/ seeinplays/guestbook",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 seeinplays/guestbook",
+    "test": "graph test"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.35.0",
+    "@graphprotocol/graph-ts": "0.28.1"
+  },
+  "devDependencies": { "matchstick-as": "0.5.0" }
+}

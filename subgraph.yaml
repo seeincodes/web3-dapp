@@ -1,0 +1,23 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Guestbook
+    network: mumbai
+    source:
+      address: "0xD06099bc43e75E37beE2b5642ab742F9df738180"
+      abi: Guestbook
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - AddedGuest
+      abis:
+        - name: Guestbook
+          file: ./abis/Guestbook.json
+      eventHandlers:
+        - event: AddedGuest(string,(string,string,uint256))
+          handler: handleAddedGuest
+      file: ./src/guestbook.ts
